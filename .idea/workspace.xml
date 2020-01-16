@@ -2,22 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26cebe38-6017-4abc-ab79-579c4dc9dc20" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Notes/68440__pinkyfinger__piano-c.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Notes/68441__pinkyfinger__piano-c.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Notes/68442__pinkyfinger__piano-d.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Notes/68443__pinkyfinger__piano-e.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Notes/68444__pinkyfinger__piano-eb.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Notes/68445__pinkyfinger__piano-f.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Notes/68446__pinkyfinger__piano-f.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Notes/68447__pinkyfinger__piano-g.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Notes/68448__pinkyfinger__piano-g.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Notes/b.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/Notes/b.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Notes/bb.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +19,7 @@
   <component name="ProjectId" id="1WRI6U4013raozOuxQ5TvcYnwX8" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Ball" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -79,7 +68,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
