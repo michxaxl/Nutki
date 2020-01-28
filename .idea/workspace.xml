@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26cebe38-6017-4abc-ab79-579c4dc9dc20" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Keyboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Nutki/App$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/App$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Nutki/App$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/App$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Nutki/App$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/App$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Nutki/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Nutki/Keyboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/Keyboard.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Keyboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Keyboard.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +36,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
