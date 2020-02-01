@@ -12,20 +12,6 @@ public class Settings {
     private JSlider volumeSlider;
     private int attempts = 3;
 
-
-//    public static void main(String[] args) {
-//        EventQueue.invokeLater(new Runnable() {
-//            @Override
-//            public void run() {
-//                try {
-//
-//                }catch(Exception e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        });
-//    }
-
     public Settings(){
 
         frame = new JFrame("Settings");
@@ -38,7 +24,7 @@ public class Settings {
 
         repeatLabel = new JLabel("Ilosć wymaganych powtórzeń: ");
 
-        SpinnerNumberModel attemptsSpinnerModel = new SpinnerNumberModel(attempts, 1.0, 9.0, 1.0);
+        SpinnerNumberModel attemptsSpinnerModel = new SpinnerNumberModel(attempts, 1, 9, 1);
         attemptsSpinner = new JSpinner(attemptsSpinnerModel);
         attemptsSpinner.setPreferredSize(new Dimension(50, 20));
 
@@ -70,14 +56,14 @@ public class Settings {
     }
 
     public int getAttempts() {
-        //attempts = (int)attemptsSpinner.getValue();
+        attempts = (Integer)attemptsSpinner.getValue();
         return attempts;
     }
 
     public void save() {
 
         System.out.println("Zapisano");
-
+        hide();
     }
 
 }

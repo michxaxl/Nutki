@@ -1,4 +1,6 @@
-import sun.applet.Main;
+//import sun.applet.Main;
+
+import com.sun.tools.javac.Main;
 
 import javax.imageio.ImageIO;
 import javax.sound.sampled.AudioInputStream;
@@ -30,9 +32,9 @@ public class Keyboard {
             b.setName(notesArray[i]);
             b.setOpaque(true);
             b.setBorderPainted(false);
-            if(i<7)
+            if(i<7) // Biale klawisze
                 b.setPreferredSize(new Dimension(40, 100));
-            else
+            else // Czarne klawisze
                 b.setPreferredSize(new Dimension(20, 100));
             i++;
         }
@@ -90,7 +92,7 @@ public class Keyboard {
 //                    Thread.sleep(1500);
                     Clip clip = AudioSystem.getClip();
                     AudioInputStream inputStream = AudioSystem.getAudioInputStream(
-                            Main.class.getResourceAsStream("/notes/" + note + ".wav"));
+                            App.class.getResourceAsStream("/notes/" + note + ".wav"));
                     clip.open(inputStream);
                     clip.start();
                 } catch (Exception e) {

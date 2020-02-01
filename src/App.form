@@ -246,8 +246,7 @@
                 </constraints>
                 <properties>
                   <enabled value="true"/>
-                  <icon value="img/settings.png"/>
-                  <text value=""/>
+                  <text value="Ustawienia"/>
                 </properties>
               </component>
             </children>

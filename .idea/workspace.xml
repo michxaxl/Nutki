@@ -16,7 +16,6 @@
       <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Keyboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Keyboard.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,26 +32,19 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1WRI6U4013raozOuxQ5TvcYnwX8" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="320" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Grafika" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -105,5 +97,39 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added interaction to buttons and developed the keyboard class" />
     <option name="LAST_COMMIT_MESSAGE" value="added interaction to buttons and developed the keyboard class" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="855" y="255" key="#com.intellij.ide.util.MemberChooser" timestamp="1580578841655">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="855" y="255" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1580578841655" />
+    <state x="811" y="410" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1580570632832">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="811" y="410" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580570632832" />
+    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1580570709567">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1580570709567" />
+    <state width="1492" height="266" key="GridCell.Tab.0.bottom" timestamp="1580581224396">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1492" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1580581224396" />
+    <state width="1492" height="266" key="GridCell.Tab.0.center" timestamp="1580581224396">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1492" height="266" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1580581224396" />
+    <state width="1492" height="266" key="GridCell.Tab.0.left" timestamp="1580581224396">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1492" height="266" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1580581224396" />
+    <state width="1492" height="266" key="GridCell.Tab.0.right" timestamp="1580581224396">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1492" height="266" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1580581224396" />
+    <state x="713" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1580578778873">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="713" y="257" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1580578778873" />
   </component>
 </project>

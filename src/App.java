@@ -1,4 +1,4 @@
-import sun.applet.Main;
+//import sun.applet.Main;
 import javax.sound.sampled.*;
 import javax.swing.*;
 import java.awt.*;
@@ -35,6 +35,8 @@ public class App {
         keyboard = new Keyboard(buttonsArray);
         settings = new Settings();
 
+        System.out.println(settings.getAttempts());
+
         alreadyExecuted = false;
 
         checkButton.addActionListener(new ActionListener() { // Sprawdz
@@ -42,7 +44,6 @@ public class App {
             public void actionPerformed(ActionEvent e) {
                 String typed = noteField.getText().toUpperCase();
                 if(alreadyExecuted){ // Jeżeli już zostało wywołane
-
                     if(typed.equals(drawnNote)){ // Jezeli wpisany dzwiek jest taki sam jak wylosowany
                         good();
                     }else {
@@ -76,11 +77,11 @@ public class App {
                     Thread.sleep(1500);
                     noteLabel.setText("Jaki to dźwięk?");
                     Clip clip = AudioSystem.getClip();
-                    AudioInputStream inputStream = AudioSystem.getAudioInputStream( Main.class.getResourceAsStream(pathToNotes + drawnNote + ".wav") );
+                    AudioInputStream inputStream = AudioSystem.getAudioInputStream( App.class.getResourceAsStream(pathToNotes + drawnNote + ".wav") );
                     clip.open(inputStream);
                     /* Glosnosc */
                     FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-                    gainControl.setValue(-30.0f); // Reduce volume by 10 decibels.
+                    gainControl.setValue(-10.0f); // Reduce volume by 10 decibels.
                     clip.start();
                     checkButton.setEnabled(true);
                 } catch (Exception e) {

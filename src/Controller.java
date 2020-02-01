@@ -1,13 +1,19 @@
 public class Controller {
 
-    private Model model;
-    private App view;
+    private Keyboard keyboard;
+    private Settings settings;
+    private App app;
 
     private Thread thread;
 
-    public Controller(Model m, App v) {
-        model = m;
-        view = v;
+
+    public Controller(Keyboard keyboard, Settings settings, App app, Thread thread) {
+        this.keyboard = keyboard;
+        this.settings = settings;
+        this.app = app;
+        this.thread = thread;
+
+
     }
 
 
