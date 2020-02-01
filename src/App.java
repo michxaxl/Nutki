@@ -5,72 +5,62 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 
 public class App {
     private JPanel mainPanel;
     private JTextField noteField;
     private JButton checkButton;
-    private JButton nextButton;
     private JLabel noteLabel;
     private JButton buttonC, buttonD, buttonE, buttonF, buttonG, buttonA, buttonH;
     private JButton buttonCis, buttonDis, buttonFis, buttonGis, buttonB;
     private JButton[] buttonsArray = {buttonC, buttonD, buttonE, buttonF, buttonG, buttonA, buttonH, buttonCis, buttonDis, buttonFis, buttonGis, buttonB};
     private JLabel pointsLabel;
+    private JButton settingsButton;
+    private JLabel statusLabel;
     private JPanel keyboardPanel;
     private static String pathToNotes;
     private static String[] notesArray = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "B", "H"};
     private static String drawnNote = "";
     private int points = 0;
     private Keyboard keyboard;
+    private Settings settings;
+    private boolean alreadyExecuted;
+//    private int attempts = 3;
 
 
 
     public App() throws IOException{
-        keyboard = new Keyboard(buttonsArray);
-
-        buttonC.setName("C");
-        buttonD.setName("D");
-        buttonE.setName("E");
-        buttonF.setName("F");
-        buttonG.setName("G");
-        buttonA.setName("A");
-        buttonH.setName("H");
-        buttonCis.setName("C#");
-        buttonDis.setName("D#");
-        buttonFis.setName("F#");
-        buttonGis.setName("G#");
-        buttonB.setName("B");
-
         pathToNotes = "/Notes/";
-        nextButton.addActionListener(new ActionListener() { // Nastepny
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                drawSound();
-                System.out.println("Present Project Directory : "+ System.getProperty("user.dir"));
-            }
-        });
+        keyboard = new Keyboard(buttonsArray);
+        settings = new Settings();
+
+        alreadyExecuted = false;
 
         checkButton.addActionListener(new ActionListener() { // Sprawdz
             @Override
             public void actionPerformed(ActionEvent e) {
                 String typed = noteField.getText().toUpperCase();
-                /* Jezeli wpisany dzwiek jest taki sam jak wylosowany */
-                if(typed.equals(drawnNote)){
-                    good();
-                }else{
-                    bad();
-//                    for(String note : notesArray){
-//                        if(typed.equals(note))
-//                            bad();
-//                        else
-//                            bad();
-////                            noteLabel.setText("Nie ma takiego dźwięku");
-//                    }
+                if(alreadyExecuted){ // Jeżeli już zostało wywołane
 
+                    if(typed.equals(drawnNote)){ // Jezeli wpisany dzwiek jest taki sam jak wylosowany
+                        good();
+                    }else {
+                        bad();
+                    }
+                }else {
+                    drawSound();
+                    checkButton.setText("Sprawdź");
+                    alreadyExecuted = true;
                 }
+            }
+        });
+        settingsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                settings.show();
+
             }
         });
     }
@@ -79,24 +69,26 @@ public class App {
         Random rand = new Random();
         drawnNote = notesArray[rand.nextInt(12)];
 
+        checkButton.setEnabled(false);
         new Thread(new Runnable() {
-            // The wrapper thread is unnecessary, unless it blocks on the
-            // Clip finishing; see comments.
             public void run() {
                 try {
-
                     Thread.sleep(1500);
                     noteLabel.setText("Jaki to dźwięk?");
                     Clip clip = AudioSystem.getClip();
-                    AudioInputStream inputStream = AudioSystem.getAudioInputStream(
-                            Main.class.getResourceAsStream(pathToNotes + drawnNote + ".wav"));
+                    AudioInputStream inputStream = AudioSystem.getAudioInputStream( Main.class.getResourceAsStream(pathToNotes + drawnNote + ".wav") );
                     clip.open(inputStream);
+                    /* Glosnosc */
+                    FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+                    gainControl.setValue(-30.0f); // Reduce volume by 10 decibels.
                     clip.start();
+                    checkButton.setEnabled(true);
                 } catch (Exception e) {
                     System.err.println(e.getMessage());
                 }
             }
         }).start();
+
     }
 
     public void good() {
@@ -147,6 +139,7 @@ public class App {
         frame.setContentPane(new App().mainPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 }

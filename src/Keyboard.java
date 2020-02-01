@@ -15,22 +15,27 @@ import java.util.Map;
 public class Keyboard {
 
     private JButton[] buttonsArray;
+    private static String[] notesArray = {"C", "D", "E", "F", "G", "A", "H", "C#", "D#", "F#", "G#", "B"};
     private Map<String, Integer> pointsForNote = new HashMap<>();
+    private int attempts = 3;
+    private Settings settings;
 
     public Keyboard(JButton[] butArray) {
+        settings = new Settings();
+        attempts = settings.getAttempts();
         this.buttonsArray = butArray;
-        pointsForNote.put("C", 0);
-        pointsForNote.put("C#", 0);
-        pointsForNote.put("D", 0);
-        pointsForNote.put("D#", 0);
-        pointsForNote.put("E", 0);
-        pointsForNote.put("F", 0);
-        pointsForNote.put("F#", 0);
-        pointsForNote.put("G", 0);
-        pointsForNote.put("G#", 0);
-        pointsForNote.put("A", 0);
-        pointsForNote.put("B", 0);
-        pointsForNote.put("H", 0);
+        int i = 0;
+        for(JButton b : buttonsArray) {
+            pointsForNote.put(notesArray[i], 0);
+            b.setName(notesArray[i]);
+            b.setOpaque(true);
+            b.setBorderPainted(false);
+            if(i<7)
+                b.setPreferredSize(new Dimension(40, 100));
+            else
+                b.setPreferredSize(new Dimension(20, 100));
+            i++;
+        }
     }
 
     /* Pobiera ilosc punktow dla danego dzwieku */
@@ -51,12 +56,13 @@ public class Keyboard {
             pointsForNote.put(note, ++actualPoints);
             for(JButton but : buttonsArray){ // Pętla po buttonach
                 if(note.equals(but.getName())){ // Jeżeli wylosowany dźwięk jest taki sam jak nazwa buttona
-                    if(getPoints(note)==1){ // Jezeli 3 razy odgadnieto dzwiek
+                    if(getPoints(note)==attempts){ // Jezeli x razy odgadnieto dzwiek
                         but.setText(note); // Pokazanie go na klawiaturze
                         but.addActionListener(new ActionListener() { //Dodaje listener do buttona zeby mogl wydawac dzwiek
                             @Override
                             public void actionPerformed(ActionEvent e) {
                                 playSound(note);
+//                                System.out.println(attempts); //TEST
                             }
                         });
                     }
