@@ -2,20 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26cebe38-6017-4abc-ab79-579c4dc9dc20" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Nutki/App$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/App$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Nutki/App$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/App$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Nutki/App$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/App$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Nutki/App$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/App$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Nutki/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Nutki/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/Controller.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Nutki/Keyboard$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/Keyboard$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Nutki/Keyboard$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/Keyboard$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Nutki/Keyboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/Keyboard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Nutki/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/Model.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Nutki/Settings$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/Settings$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Nutki/Settings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/Settings.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Keyboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Keyboard.java" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,10 +44,22 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="320" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">

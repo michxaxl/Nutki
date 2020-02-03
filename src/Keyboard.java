@@ -47,7 +47,8 @@ public class Keyboard {
 
     /* Ustawia ilosc punktow points dla dzwieku note*/
     public void setPoints(String note, Integer points) {
-        pointsForNote.put(note, points);
+        if(pointsForNote.containsKey(note))
+            pointsForNote.put(note, points);
     }
 
     /* Dodaje 1 punkt */
@@ -55,36 +56,34 @@ public class Keyboard {
     {
         try {
             Integer actualPoints = pointsForNote.get(note);
-            pointsForNote.put(note, ++actualPoints);
-            for(JButton but : buttonsArray){ // Pętla po buttonach
-                if(note.equals(but.getName())){ // Jeżeli wylosowany dźwięk jest taki sam jak nazwa buttona
-                    if(getPoints(note)==attempts){ // Jezeli x razy odgadnieto dzwiek
-                        but.setText(note); // Pokazanie go na klawiaturze
-                        but.addActionListener(new ActionListener() { //Dodaje listener do buttona zeby mogl wydawac dzwiek
-                            @Override
-                            public void actionPerformed(ActionEvent e) {
-                                playSound(note);
-//                                System.out.println(attempts); //TEST
-                            }
-                        });
-                    }
-
-                }
+            if(actualPoints<3) {
+                pointsForNote.put(note, ++actualPoints);
+                unlockButton(note);
             }
+            checkPointsForNote(); // Sprawdzenie czy wszystkie klawisze odblokowane
         }catch(Exception e){
             System.out.println(e);
         }
     }
 
-//    void button(JButton button) {
-//        button.addActionListener(new ActionListener() { // Nastepny
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//
-//            }
-//        }
-//    }
+    /* Odblokowuje przycisk klawiatury, który bedzie od tej pory odtwarzal dzwiek */
+    void unlockButton(String note){
+        for (JButton but : buttonsArray) { // Pętla po buttonach
+            if (note.equals(but.getName())) { // Jeżeli wylosowany dźwięk jest taki sam jak nazwa buttona
+                if (pointsForNote.get(note) == attempts) { // Jezeli x razy odgadnieto dzwiek
+                    but.setText(note); // Pokazanie go na klawiaturze
+                    but.addActionListener(new ActionListener() { //Dodaje listener do buttona zeby mogl wydawac dzwiek
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            playSound(note);
+                        }
+                    });
+                }
+            }
+        }
+    }
 
+    /* Odtwarza podany w parametrze dzwiek */
     public void playSound(String note) {
         new Thread(new Runnable() {
             public void run() {
@@ -102,6 +101,19 @@ public class Keyboard {
         }).start();
     }
 
+    public void checkPointsForNote(){
+        int counter = 0;
+        for(int i = 0; i<notesArray.length; i++){
+//                System.out.print(pointsForNote.get(notesArray[i])); //test
+            if(pointsForNote.get(notesArray[i])==attempts)
+                counter++;
+        }
+        if(counter==12)
+            finish();
+    }
 
+    public void finish() {
+//        System.out.println("Wygrana!  Punktów: ");
+    }
 
 }
