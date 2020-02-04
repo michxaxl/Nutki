@@ -6,37 +6,45 @@ import java.awt.event.ActionListener;
 public class Settings {
     private JFrame frame;
     private JButton exitButton;
-    private JPanel panel;
-    private JLabel repeatLabel;
+    private JPanel attemptsPanel, volumePanel, ExitPanel;
+    private JLabel attemptsLabel, volumeLabel;
     private JSpinner attemptsSpinner;
     private JSlider volumeSlider;
+    private float volume;
     private int attempts = 3;
+    GridLayout layout;
 
     public Settings(){
+//        attempts=3;
+        layout =  new GridLayout(3,2);
 
         frame = new JFrame("Settings");
         frame.setSize(new Dimension(500, 300));
         frame.setResizable(false);
 
         exitButton = new JButton("Zapisz i wyjdź");
-        exitButton.setLayout(null);
-        exitButton.setLocation(150, 200);
 
-        repeatLabel = new JLabel("Ilosć wymaganych powtórzeń: ");
+        attemptsLabel = new JLabel("Ilosć wymaganych powtórzeń: ");
+        volumeLabel = new JLabel("Głosnosć: ");
 
         SpinnerNumberModel attemptsSpinnerModel = new SpinnerNumberModel(attempts, 1, 9, 1);
         attemptsSpinner = new JSpinner(attemptsSpinnerModel);
         attemptsSpinner.setPreferredSize(new Dimension(50, 20));
 
-//        volumeSlider = new JSlider();
+        volumeSlider = new JSlider(-60, 0);
+        volumeSlider.setValue(0);
 
-        panel = new JPanel();
-        frame.add(panel);
+        attemptsPanel = new JPanel();
+        attemptsPanel.setLayout(layout);
+        frame.add(attemptsPanel);
+//        attemptsPanel.setAlignmentY(Component.TOP_ALIGNMENT);
+        attemptsPanel.add(attemptsLabel);
+        attemptsPanel.add(attemptsSpinner);
 
-        panel.add(repeatLabel);
-        panel.add(attemptsSpinner);
-//        panel.add(volumeSlider);
-        panel.add(exitButton);
+        exitButton.setBounds(50,50,50,50);
+        attemptsPanel.add(volumeLabel);
+        attemptsPanel.add(volumeSlider);
+        attemptsPanel.add(exitButton);
 
 
         exitButton.addActionListener(new ActionListener() {
@@ -56,14 +64,18 @@ public class Settings {
     }
 
     public int getAttempts() {
-        attempts = (Integer)attemptsSpinner.getValue();
         return attempts;
     }
 
-    public void save() {
+    public float getVolume(){
+        return volume;
+    }
 
-        System.out.println("Zapisano");
+    public void save() {
+        volume = volumeSlider.getValue();
+        attempts = (int)attemptsSpinner.getValue();
         hide();
+
     }
 
 }

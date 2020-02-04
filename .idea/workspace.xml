@@ -2,21 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26cebe38-6017-4abc-ab79-579c4dc9dc20" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Nutki/App$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/App$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Nutki/App$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/App$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Nutki/App$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/App$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Nutki/App$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/App$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Nutki/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nutki/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/Controller.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Nutki/Keyboard$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/Keyboard$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Nutki/Keyboard$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/Keyboard$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Nutki/Keyboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/Keyboard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nutki/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/Model.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nutki/Settings$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/Settings$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Nutki/Settings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/Settings.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Keyboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Keyboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Settings.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,6 +45,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RunDashboard">
@@ -114,37 +113,21 @@
     <option name="LAST_COMMIT_MESSAGE" value="added interaction to buttons and developed the keyboard class" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="855" y="255" key="#com.intellij.ide.util.MemberChooser" timestamp="1580578841655">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="855" y="255" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1580578841655" />
-    <state x="811" y="410" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1580570632832">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="811" y="410" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580570632832" />
-    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1580570709567">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1580570709567" />
-    <state width="1492" height="266" key="GridCell.Tab.0.bottom" timestamp="1580581224396">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1492" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1580581224396" />
-    <state width="1492" height="266" key="GridCell.Tab.0.center" timestamp="1580581224396">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1492" height="266" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1580581224396" />
-    <state width="1492" height="266" key="GridCell.Tab.0.left" timestamp="1580581224396">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1492" height="266" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1580581224396" />
-    <state width="1492" height="266" key="GridCell.Tab.0.right" timestamp="1580581224396">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1492" height="266" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1580581224396" />
-    <state x="713" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1580578778873">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="713" y="257" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1580578778873" />
+    <state x="855" y="255" key="#com.intellij.ide.util.MemberChooser" />
+    <state x="855" y="255" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" />
+    <state x="811" y="410" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" />
+    <state x="811" y="410" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" />
+    <state x="740" y="276" key="FileChooserDialogImpl" />
+    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" />
+    <state width="1492" height="266" key="GridCell.Tab.0.bottom" />
+    <state width="1492" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" />
+    <state width="1492" height="266" key="GridCell.Tab.0.center" />
+    <state width="1492" height="266" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" />
+    <state width="1492" height="266" key="GridCell.Tab.0.left" />
+    <state width="1492" height="266" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" />
+    <state width="1492" height="266" key="GridCell.Tab.0.right" />
+    <state width="1492" height="266" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" />
+    <state x="713" y="257" width="672" height="678" key="search.everywhere.popup" />
+    <state x="713" y="257" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" />
   </component>
 </project>

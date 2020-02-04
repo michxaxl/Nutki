@@ -17,15 +17,18 @@ public class App {
     private JButton[] buttonsArray = {buttonC, buttonD, buttonE, buttonF, buttonG, buttonA, buttonH, buttonCis, buttonDis, buttonFis, buttonGis, buttonB};
     private JLabel pointsLabel;
     private JButton settingsButton;
-    private JLabel statusLabel;
+    private JButton repeatButton;
+    private JButton restartButton;
     private JPanel keyboardPanel;
-    private static String pathToNotes;
-    private static String[] notesArray = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "B", "H"};
-    private static String drawnNote = "";
+    private String pathToNotes;
+    private String[] notesArray = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "B", "H"};
+    private String drawnNote = "", drawnNoteTemp = "";
     private int points = 0;
     private Keyboard keyboard;
     private Settings settings;
     private boolean alreadyExecuted;
+    private ActionListener checkListener;
+    private float volume;
 //    private int attempts = 3;
 
 
@@ -34,12 +37,12 @@ public class App {
         pathToNotes = "/Notes/";
         keyboard = new Keyboard(buttonsArray);
         settings = new Settings();
+        volume = settings.getVolume();
 
-        System.out.println(settings.getAttempts());
-
+//        System.out.println(settings.getAttempts());
         alreadyExecuted = false;
 
-        checkButton.addActionListener(new ActionListener() { // Sprawdz
+        checkListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String typed = noteField.getText().toUpperCase();
@@ -55,41 +58,75 @@ public class App {
                     alreadyExecuted = true;
                 }
             }
-        });
+        };
+
+        checkButton.addActionListener(checkListener); // Button
+        noteField.addActionListener(checkListener); // Enter
+
         settingsButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
-
+            public void actionPerformed(ActionEvent e) { // Ustawienia
                 settings.show();
+            }
+        });
 
+        repeatButton.addActionListener(new ActionListener() { // Powtórz
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                play(drawnNote);
+            }
+        });
+        restartButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                restart();
             }
         });
     }
 
     public synchronized void drawSound() {
-        Random rand = new Random();
-        drawnNote = notesArray[rand.nextInt(12)];
+        keyboard.setVolume(settings.getVolume());
+        if(!keyboard.isFinished()) {
+            Random rand = new Random();
+            drawnNote = notesArray[rand.nextInt(12)];
 
-        checkButton.setEnabled(false);
-        new Thread(new Runnable() {
-            public void run() {
-                try {
-                    Thread.sleep(1500);
-                    noteLabel.setText("Jaki to dźwięk?");
-                    Clip clip = AudioSystem.getClip();
-                    AudioInputStream inputStream = AudioSystem.getAudioInputStream( App.class.getResourceAsStream(pathToNotes + drawnNote + ".wav") );
-                    clip.open(inputStream);
-                    /* Glosnosc */
-                    FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-                    gainControl.setValue(-10.0f); // Reduce volume by 10 decibels.
-                    clip.start();
-                    checkButton.setEnabled(true);
-                } catch (Exception e) {
-                    System.err.println(e.getMessage());
-                }
+            if (drawnNote.equals(drawnNoteTemp)) { // Jesli dzwiek sie powtorzyl - losuj jeszcze raz
+                drawnNote = notesArray[rand.nextInt(12)];
             }
-        }).start();
 
+            drawnNoteTemp = drawnNote;
+            checkButton.setEnabled(false);
+            new Thread(new Runnable() {
+                public void run() {
+                    try {
+                        volume = settings.getVolume();
+                        Thread.sleep(1500);
+                        noteLabel.setText("Jaki to dźwięk?");
+                        play(drawnNote);
+                    } catch (Exception e) {
+                        System.err.println(e.getMessage());
+                    }
+                }
+            }).start();
+        } else {
+            System.out.println("Koniec gry! Punkty: "+points);
+        }
+    }
+
+    public void play(String noteName){
+        try {
+            volume = settings.getVolume();
+            Clip clip = AudioSystem.getClip();
+            AudioInputStream inputStream = AudioSystem.getAudioInputStream( App.class.getResourceAsStream(pathToNotes + noteName + ".wav") );
+            clip.open(inputStream);
+            /* Glosnosc */
+            FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+            gainControl.setValue(volume); // Reduce volume by 10 decibels.
+            clip.start();
+            checkButton.setEnabled(true);
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
     }
 
     public void good() {
@@ -114,10 +151,7 @@ public class App {
 
     public void updatePoints(){
         if(points<0){ points=0;}
-
-
-//
-
+        
         Font labelFont = pointsLabel.getFont();
         pointsLabel.setText("PUNKTY: "+points);
 
@@ -133,6 +167,15 @@ public class App {
                 }
             }
         }).start();
+    }
+
+    public void restart() {
+        points = 0;
+        keyboard.restart();
+        keyboard.setAttempts(settings.getAttempts());
+        keyboard.setVolume(settings.getVolume());
+        updatePoints();
+        drawSound();
     }
 
     public static void main(String[] args) throws IOException {

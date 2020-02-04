@@ -6,6 +6,7 @@ import javax.imageio.ImageIO;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
+import javax.sound.sampled.FloatControl;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -17,14 +18,15 @@ import java.util.Map;
 public class Keyboard {
 
     private JButton[] buttonsArray;
-    private static String[] notesArray = {"C", "D", "E", "F", "G", "A", "H", "C#", "D#", "F#", "G#", "B"};
+    private String[] notesArray = {"C", "D", "E", "F", "G", "A", "H", "C#", "D#", "F#", "G#", "B"};
     private Map<String, Integer> pointsForNote = new HashMap<>();
-    private int attempts = 3;
+    private int attempts=3;
     private Settings settings;
+    private float volume;
 
     public Keyboard(JButton[] butArray) {
-        settings = new Settings();
-        attempts = settings.getAttempts();
+//        settings = new Settings();
+//        System.out.println(attempts);
         this.buttonsArray = butArray;
         int i = 0;
         for(JButton b : buttonsArray) {
@@ -56,11 +58,11 @@ public class Keyboard {
     {
         try {
             Integer actualPoints = pointsForNote.get(note);
-            if(actualPoints<3) {
+            if(actualPoints<attempts) {
                 pointsForNote.put(note, ++actualPoints);
                 unlockButton(note);
             }
-            checkPointsForNote(); // Sprawdzenie czy wszystkie klawisze odblokowane
+//            checkPointsForNote(); // Sprawdzenie czy wszystkie klawisze odblokowane
         }catch(Exception e){
             System.out.println(e);
         }
@@ -93,6 +95,8 @@ public class Keyboard {
                     AudioInputStream inputStream = AudioSystem.getAudioInputStream(
                             App.class.getResourceAsStream("/notes/" + note + ".wav"));
                     clip.open(inputStream);
+                    FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+                    gainControl.setValue(volume);
                     clip.start();
                 } catch (Exception e) {
                     System.err.println(e.getMessage());
@@ -101,19 +105,37 @@ public class Keyboard {
         }).start();
     }
 
-    public void checkPointsForNote(){
+    public boolean isFinished(){
         int counter = 0;
         for(int i = 0; i<notesArray.length; i++){
-//                System.out.print(pointsForNote.get(notesArray[i])); //test
+//               System.out.print(pointsForNote.get(notesArray[i])); //test
             if(pointsForNote.get(notesArray[i])==attempts)
                 counter++;
         }
         if(counter==12)
-            finish();
+            return true;
+        else
+            return false;
     }
 
-    public void finish() {
-//        System.out.println("Wygrana!  Punktów: ");
+    public void setAttempts(int attempts) {
+        this.attempts = attempts;
+    }
+
+    public void setVolume(float volume) {
+        this.volume = volume;
+    }
+
+    public void restart() {
+//        attempts = settings.getAttempts();
+//        volume = settings.getVolume();
+        for(int i = 0; i<notesArray.length; i++){
+            pointsForNote.put(notesArray[i], 0);
+        }
+        for (JButton but : buttonsArray) {
+            but.setText("");
+        }
+
     }
 
 }
