@@ -75,7 +75,6 @@ public class Settings {
         volume = volumeSlider.getValue();
         attempts = (int)attemptsSpinner.getValue();
         hide();
-
     }
 
 }

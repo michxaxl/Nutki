@@ -21,6 +21,7 @@ public class App {
     private JButton restartButton;
     private JPanel keyboardPanel;
     private String pathToNotes;
+
     private String[] notesArray = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "B", "H"};
     private String drawnNote = "", drawnNoteTemp = "";
     private int points = 0;
@@ -31,7 +32,7 @@ public class App {
     private float volume;
 //    private int attempts = 3;
 
-
+// Schemat: https://drive.google.com/file/d/1BHK_Ki221aOXI0TF1RiG8r_LD06wB4SK/view
 
     public App() throws IOException{
         pathToNotes = "/Notes/";
@@ -109,7 +110,7 @@ public class App {
                 }
             }).start();
         } else {
-            System.out.println("Koniec gry! Punkty: "+points);
+            endGame();
         }
     }
 
@@ -131,7 +132,6 @@ public class App {
 
     public void good() {
         keyboard.addPoint(drawnNote);
-
         pointsLabel.setForeground(new Color(122, 226, 58));
         noteLabel.setText("Dobrze!");
         noteField.setText(""); // Wyczyszczenie pola tekstowego
@@ -176,6 +176,19 @@ public class App {
         keyboard.setVolume(settings.getVolume());
         updatePoints();
         drawSound();
+    }
+
+    public void endGame() {
+        JFrame endFrame = new JFrame("Koniec Gry!");
+        endFrame.setSize(new Dimension(500, 300));
+        endFrame.setResizable(false);
+        JPanel panel = new JPanel();
+        Font labelFont = pointsLabel.getFont();
+        JLabel text = new JLabel("Koniec! Zebrane punkty: "+points);
+        endFrame.add(panel);
+        panel.add(text, BorderLayout.CENTER);
+
+        endFrame.setVisible(true);
     }
 
     public static void main(String[] args) throws IOException {
