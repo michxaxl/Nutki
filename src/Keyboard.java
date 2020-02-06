@@ -25,8 +25,6 @@ public class Keyboard {
     private float volume;
 
     public Keyboard(JButton[] butArray) {
-//        settings = new Settings();
-//        System.out.println(attempts);
         this.buttonsArray = butArray;
         int i = 0;
         for(JButton b : buttonsArray) {
@@ -62,14 +60,13 @@ public class Keyboard {
                 pointsForNote.put(note, ++actualPoints);
                 unlockButton(note);
             }
-//            checkPointsForNote(); // Sprawdzenie czy wszystkie klawisze odblokowane
         }catch(Exception e){
             System.out.println(e);
         }
     }
 
     /* Odblokowuje przycisk klawiatury, który bedzie od tej pory odtwarzal dzwiek */
-    void unlockButton(String note){
+    public void unlockButton(String note){
         for (JButton but : buttonsArray) { // Pętla po buttonach
             if (note.equals(but.getName())) { // Jeżeli wylosowany dźwięk jest taki sam jak nazwa buttona
                 if (pointsForNote.get(note) == attempts) { // Jezeli x razy odgadnieto dzwiek
@@ -90,7 +87,6 @@ public class Keyboard {
         new Thread(new Runnable() {
             public void run() {
                 try {
-//                    Thread.sleep(1500);
                     Clip clip = AudioSystem.getClip();
                     AudioInputStream inputStream = AudioSystem.getAudioInputStream(
                             App.class.getResourceAsStream("/notes/" + note + ".wav"));
@@ -127,8 +123,6 @@ public class Keyboard {
     }
 
     public void restart() {
-//        attempts = settings.getAttempts();
-//        volume = settings.getVolume();
         for(int i = 0; i<notesArray.length; i++){
             pointsForNote.put(notesArray[i], 0);
         }

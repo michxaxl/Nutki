@@ -5,17 +5,18 @@ import java.awt.event.ActionListener;
 
 public class Settings {
     private JFrame frame;
-    private JButton exitButton;
-    private JPanel attemptsPanel, volumePanel, ExitPanel;
-    private JLabel attemptsLabel, volumeLabel;
     private JSpinner attemptsSpinner;
     private JSlider volumeSlider;
     private float volume;
     private int attempts = 3;
-    GridLayout layout;
+
 
     public Settings(){
-//        attempts=3;
+        JButton exitButton;
+        JPanel attemptsPanel;
+        JLabel attemptsLabel, volumeLabel;
+        GridLayout layout;
+
         layout =  new GridLayout(3,2);
 
         frame = new JFrame("Settings");
@@ -37,7 +38,6 @@ public class Settings {
         attemptsPanel = new JPanel();
         attemptsPanel.setLayout(layout);
         frame.add(attemptsPanel);
-//        attemptsPanel.setAlignmentY(Component.TOP_ALIGNMENT);
         attemptsPanel.add(attemptsLabel);
         attemptsPanel.add(attemptsSpinner);
 

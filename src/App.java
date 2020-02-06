@@ -1,4 +1,3 @@
-//import sun.applet.Main;
 import javax.sound.sampled.*;
 import javax.swing.*;
 import java.awt.*;
@@ -34,13 +33,12 @@ public class App {
 
 // Schemat: https://drive.google.com/file/d/1BHK_Ki221aOXI0TF1RiG8r_LD06wB4SK/view
 
-    public App() throws IOException{
+    private App() throws IOException{
         pathToNotes = "/Notes/";
         keyboard = new Keyboard(buttonsArray);
         settings = new Settings();
         volume = settings.getVolume();
 
-//        System.out.println(settings.getAttempts());
         alreadyExecuted = false;
 
         checkListener = new ActionListener() {
@@ -58,6 +56,7 @@ public class App {
                     checkButton.setText("Sprawdź");
                     alreadyExecuted = true;
                 }
+                System.out.println(drawnNote);
             }
         };
 
@@ -85,7 +84,7 @@ public class App {
         });
     }
 
-    public synchronized void drawSound() {
+    private synchronized void drawSound() {
         keyboard.setVolume(settings.getVolume());
         if(!keyboard.isFinished()) {
             Random rand = new Random();
@@ -114,7 +113,7 @@ public class App {
         }
     }
 
-    public void play(String noteName){
+    private void play(String noteName){
         try {
             volume = settings.getVolume();
             Clip clip = AudioSystem.getClip();
@@ -130,7 +129,7 @@ public class App {
         }
     }
 
-    public void good() {
+    private void good() {
         keyboard.addPoint(drawnNote);
         pointsLabel.setForeground(new Color(122, 226, 58));
         noteLabel.setText("Dobrze!");
@@ -140,7 +139,7 @@ public class App {
         drawSound(); // losowanie kolejnego dźwięku
     }
 
-    public void bad() {
+    private void bad() {
         pointsLabel.setForeground(new Color(255, 103, 73));
         noteLabel.setText("Niestety, był to dźwięk: "+drawnNote);
         noteField.setText("");
@@ -149,7 +148,7 @@ public class App {
         drawSound();
     }
 
-    public void updatePoints(){
+    private void updatePoints(){
         if(points<0){ points=0;}
         
         Font labelFont = pointsLabel.getFont();
@@ -169,7 +168,7 @@ public class App {
         }).start();
     }
 
-    public void restart() {
+    private void restart() {
         points = 0;
         keyboard.restart();
         keyboard.setAttempts(settings.getAttempts());
@@ -178,12 +177,11 @@ public class App {
         drawSound();
     }
 
-    public void endGame() {
+    private void endGame() {
         JFrame endFrame = new JFrame("Koniec Gry!");
         endFrame.setSize(new Dimension(500, 300));
         endFrame.setResizable(false);
         JPanel panel = new JPanel();
-        Font labelFont = pointsLabel.getFont();
         JLabel text = new JLabel("Koniec! Zebrane punkty: "+points);
         endFrame.add(panel);
         panel.add(text, BorderLayout.CENTER);

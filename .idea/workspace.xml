@@ -7,8 +7,15 @@
       <change beforePath="$PROJECT_DIR$/out/production/Nutki/App$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/App$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Nutki/App$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/App$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Nutki/App$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/App$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Nutki/App$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/App$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Nutki/App$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/App$6.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Nutki/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Nutki/Keyboard$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/Keyboard$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Nutki/Keyboard$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/Keyboard$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Nutki/Keyboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/Keyboard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Nutki/Settings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Nutki/Settings.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Keyboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Keyboard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Settings.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
